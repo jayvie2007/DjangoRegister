@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
-#from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from django.contrib import messages
-from .models import User
 from django.contrib import auth
 # Create your views here.
 
@@ -11,12 +10,7 @@ def home(request):
 def register(request):
     if request.method =='POST':
         first_name = request.POST['first_name']
-        middle_name = request.POST['middle_name']
         last_name = request.POST['last_name']
-        address = request.POST['address']
-        city = request.POST['city']
-        state = request.POST['state']
-        zip = request.POST['zip']
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
@@ -29,17 +23,12 @@ def register(request):
                 messages.info(request, 'Email already exist')
                 return redirect('register')
             else: 
-                new_user = User(
+                new_user = User.objects.create(
                     first_name = first_name,
-                    middle_name = middle_name,
                     last_name = last_name,
-                    address = address,
-                    city = city,
-                    state = state,
-                    zip = zip,
+                    username = username,
                     email = email,
                     password = password,
-                    confirm_password = confirm_password
                 )
                 new_user.save()
                 return redirect('login')
