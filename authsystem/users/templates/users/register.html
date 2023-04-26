@@ -20,15 +20,15 @@
   {% csrf_token %}
     <div class="col-md-4">
       <label for="inputEmail4" class="form-label">First Name</label>
-      <input name = "first_name" type="text" class="form-control" id="input_firstname">
+      <input name = "first_name" type="text" class="form-control" id="input_firstname" required>
     </div>
     <div class="col-md-4">
       <label for="inputEmail4" class="form-label">Middle Name</label>
-      <input name = "middle_name" type="text" class="form-control" id="input_middlename">
+      <input name = "middle_name" type="text" class="form-control" id="input_middlename" >
     </div>
     <div class="col-md-4">
       <label for="inputEmail4" class="form-label">Last Name</label>
-      <input name = "last_name" type="text" class="form-control" id="input_lastname">
+      <input name = "last_name" type="text" class="form-control" id="input_lastname" required>
     </div>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Email</label>
@@ -36,7 +36,7 @@
     </div>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Username</label>
-      <input type="text" class="form-control" id="input_username">
+      <input name = username type="text" class="form-control" id="input_username">
     </div>
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Password</label>
