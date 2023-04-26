@@ -30,6 +30,10 @@ nav {
 }
 
 button a {
-    color:white;
+    color: white;
+    text-decoration: none;
+}
+
+a {
     text-decoration: none;
 }
