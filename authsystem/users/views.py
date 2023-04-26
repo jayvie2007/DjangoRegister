@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .models import User
+#from .models import User
 from django.contrib import auth
 # Create your views here.
 
@@ -58,7 +58,7 @@ def login(request):
 
         if user is not None:
             auth.login(request,user)
-            return redirect('home')
+            return redirect('login')
         else:
             messages.info(request, 'Invalid Username or Password')
             return redirect('login')
